@@ -6,6 +6,6 @@ def show(file_path):
         for line in lines:
             print(f"{line.strip().split(';')[0]}: {line.strip().split(';')[1]}")
 
-show("test.csv")
+show("test.txt")
             
               
