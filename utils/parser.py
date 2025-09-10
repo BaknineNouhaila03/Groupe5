@@ -17,14 +17,17 @@ def parse_args():
     add_parser = subparsers.add_parser("add", help="Add a new task")
     add_parser.add_argument("description", type=str,
                             help="Description of the task")
-
+    add_parser.add_argument("Etat", type=str,
+                               help="New state of the task : started, suspended, cancelled and completed")
     modify_parser = subparsers.add_parser("modify",
                                           help="Modify an existing task")
+    
     modify_parser.add_argument("task_id", type=int, help="ID of the task to "
                                                          "modify")
     modify_parser.add_argument("description", type=str,
                                help="New description of the task")
-
+    modify_parser.add_argument("Etat", type=str,
+                               help="New state of the task : started, suspended, cancelled and completed")
     rm_parser = subparsers.add_parser("rm", help="Remove a task")
     rm_parser.add_argument("task_id", type=int, help="ID of the task to remove"
                            )
