@@ -1,6 +1,6 @@
 from task import Task
 
-SPLIT = "|"
+SPLIT = ";"
 
 
 def read_tasks(path):
@@ -9,8 +9,8 @@ def read_tasks(path):
         for line in f:
             line = line.strip()
             if line:
-                task_id, description = line.split("|", 1)
-                tasklist[int(task_id)] = Task(task_id, description)
+                task_id, description, etat = line.strip().split(SPLIT)
+                tasklist[int(task_id)] = Task(task_id, description, etat)
     return tasklist
 
 
@@ -18,6 +18,7 @@ def write_tasks(path, tasklist: dict[int, Task]):
     try:
         with open(path, "w", encoding="utf-8") as f:
             for task in tasklist.values():
-                f.write(str(task.id) + SPLIT + task.description + "\n")
+                f.write(str(task.id) + SPLIT + task.description + SPLIT +
+                        task.etat + "\n")
     except Exception as e:
         print(f"Error writing to file: {e}")
