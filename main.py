@@ -30,6 +30,16 @@ def modify(file, id, contenu):
     else:
         print("id does not exist")
 
+def show(file):
+    """
+    Displays tasks from a file in a formatted manner.
+    Each line in the file should be in the format: id;description
+    """
+    with open(file, 'r') as text_file:
+        lines = text_file.readlines()
+        for line in lines:
+            print(f"{line.strip().split(';')[0]}: {line.strip().split(';')[1]}")
+
 modify("test.txt","02","task2")
 #rm("test.txt","03")
 
