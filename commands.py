@@ -8,11 +8,11 @@ def add(tasklist: dict[int, Task], description: str , etat: str):
     print("Task added with ID:", task_id)
 
 
-def modify(tasklist: dict[int, Task], task_id: int, description = None, etat = None):
+def modify(tasklist: dict[int, Task], task_id: int, description : str = None, etat: str  = None ):
     try:
-        if description != None : 
+        if description is not None : 
          tasklist[task_id].description = description
-        elif etat != None :
+        elif etat is not None :
          tasklist[task_id].etat = etat
     except KeyError:
         print(f"Task with ID {task_id} not found.")
