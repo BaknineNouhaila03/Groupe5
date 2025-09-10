@@ -9,9 +9,9 @@ def main():
         tasklist = io.read_tasks(args.path)
         match args.command:
             case "add":
-                add(tasklist, args.description)
+                add(tasklist, args.description, args.etat)
             case "modify":
-                modify(tasklist, args.task_id, args.description)
+                modify(tasklist, args.task_id, args.description, args.etat)
             case "rm":
                 rm(tasklist, args.task_id)
             case "show":

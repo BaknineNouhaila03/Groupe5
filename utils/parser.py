@@ -9,7 +9,7 @@ def parse_args():
         "path",
         type=str,
         help="Path to the task file",
-        default="lestaches.txt"
+        default="lestaches.txt",
     )
 
     subparsers = parser.add_subparsers(dest="command", required=True,
