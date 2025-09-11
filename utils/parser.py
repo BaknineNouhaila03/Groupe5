@@ -17,8 +17,8 @@ def parse_args():
     add_parser = subparsers.add_parser("add", help="Add a new task")
     add_parser.add_argument("description", type=str,
                             help="Description of the task")
-    add_parser.add_argument("etat", type=str,
-                            help="New state of the task : started, suspended, cancelled and completed")
+    add_parser.add_argument("-e", "--etat", type=str,
+                               help="New state of the task : started, suspended, cancelled and completed")
     modify_parser = subparsers.add_parser("modify",
                                           help="Modify an existing task")
 
