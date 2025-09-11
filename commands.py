@@ -9,6 +9,9 @@ def add(tasklist: dict[int, Task], description: str , etat: str):
 
 
 def modify(tasklist: dict[int, Task], task_id: int, description : str = None, etat: str  = None ):
+    if description is None and etat is None:
+        print("One of the arguments -d/--description -e/--etat is required.")
+        return
     try:
         if description is not None : 
          tasklist[task_id].description = description
