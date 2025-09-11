@@ -4,7 +4,7 @@ from utils.print import print_tasks
 
 def add(tasklist: dict[int, Task], description: str , state: str):
     if state not in [ "started", "suspended", "completed","cancelled"]:
-            print("state doit etre soit started, suspended, completed ou cancelled")
+            print("State must be one of: started, suspended, completed ou cancelled")
             return (f"[error] Status not provided as required.")
     task_id = max((tasklist.keys()), default=0) + 1
     tasklist[task_id] = Task(str(task_id), description , state)
@@ -22,7 +22,7 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, st
          tasklist[task_id].description = description
         if state is not None : 
          if state not in [ "started", "suspended", "completed","cancelled"]:
-            print("state doit etre soit started, suspended, completed ou cancelled")
+            print("State must be one of: started, suspended, completed ou cancelled")
             return (f"[error] Status not provided as required.")
          tasklist[task_id].state = state
         return (f"[success] Task  with ID {task_id} successfully modified:"
