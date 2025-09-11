@@ -13,9 +13,13 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, et
         if description is not None : 
          tasklist[task_id].description = description
         if etat is not None :
+         if etat not in [ "started", "suspended", "completed","cancelled"]:
+            print("etat doit etre soit started, suspended, completed ou cancelled")
+            return
          tasklist[task_id].etat = etat
     except KeyError:
         print(f"Task with ID {task_id} not found.")
+    
 
 def rm(tasklist: dict[int, Task], task_id: int):
     try:
