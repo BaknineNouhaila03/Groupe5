@@ -1,1 +1,7 @@
-2025/09/11 10:59:45	action:add	result:Task added with ID: 5; Description: ac; Etat: fh
+2025/09/11 11:45:52	action:add	result:Task added with ID: 2; Description: task1; Etat: suspended
+2025/09/11 11:46:11	action:modify	result:Task  with ID: 2 modified ; Result :  Description: desc; Etat: None
+2025/09/11 11:46:17	action:modify	result:Task  with ID: 2 modified ; Result :  Description: None; Etat: completed
+2025/09/11 11:47:14	action:add	result:Task added with ID: 2; Description: new_task; Etat: suspended
+2025/09/11 11:47:24	action:modify	result:Task  with ID: 2 modified ; Result :  Description: desc; Etat: suspended
+2025/09/11 11:47:32	action:modify	result:Task  with ID: 2 modified ; Result :  Description: desc; Etat: completed
+2025/09/11 11:47:36	action:modify	result:etat doit etre soit started, suspended, completed ou cancelled
