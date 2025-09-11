@@ -6,6 +6,8 @@ def add(tasklist: dict[int, Task], description: str , etat: str):
     task_id = max((tasklist.keys()), default=0) + 1
     tasklist[task_id] = Task(str(task_id), description , etat)
     print("Task added with ID:", task_id)
+    return (f"Task added with ID: {task_id}; Description: {description}; Etat:"
+            f" {etat}")
 
 
 def modify(tasklist: dict[int, Task], task_id: int, description : str = None, etat: str  = None ):
