@@ -11,9 +11,9 @@ def main():
         tasklist = io.read_tasks(args.path)
         match args.command:
             case "add":
-                result_msg = add(tasklist, args.description, args.etat)
+                result_msg = add(tasklist, args.description, args.state)
             case "modify":
-                result_msg = modify(tasklist, args.task_id, args.description, args.etat)
+                result_msg = modify(tasklist, args.task_id, args.description, args.state)
             case "rm":
                 result_msg = rm(tasklist, args.task_id)
             case "show":
