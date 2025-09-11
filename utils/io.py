@@ -26,7 +26,7 @@ def write_tasks(path, tasklist: dict[int, Task]):
 
 def write_logs(path, action: str, result: str):
     try:
-        with open(path, "w", encoding="utf-8") as f:
+        with open(path, "a+", encoding="utf-8") as f:
             timestamp = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
             f.write(timestamp + "\taction:" + action + "\tresult:" + result +
                     "\n")
