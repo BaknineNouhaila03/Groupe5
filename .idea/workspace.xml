@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f19c334-123b-4cc2-9f61-e0e50d3a9813" name="Changes" comment="add .gitignore">
+    <list default="true" id="7f19c334-123b-4cc2-9f61-e0e50d3a9813" name="Changes" comment="la fonction modify-print error lorsqu’aucun paramètre n’est transmis">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/commands.py" beforeDir="false" afterPath="$PROJECT_DIR$/commands.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/task.py" beforeDir="false" afterPath="$PROJECT_DIR$/task.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +98,8 @@
       <option name="presentableId" value="Default" />
       <updated>1757335623829</updated>
       <workItem from="1757556995676" duration="560000" />
-      <workItem from="1757557569591" duration="682000" />
+      <workItem from="1757557569591" duration="3917000" />
+      <workItem from="1757576256771" duration="2007000" />
     </task>
     <task id="LOCAL-00001" summary="add .gitignore">
       <option name="closed" value="true" />
@@ -107,7 +109,39 @@
       <option name="project" value="LOCAL" />
       <updated>1757558145224</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update workspace and code style configuration">
+      <option name="closed" value="true" />
+      <created>1757558277963</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1757558277963</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: correct conditional logic for updating task state in commands.py">
+      <option name="closed" value="true" />
+      <created>1757558293445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1757558293445</updated>
+    </task>
+    <task id="LOCAL-00004" summary="la fonction modify-des parametres optionnels">
+      <option name="closed" value="true" />
+      <created>1757576634507</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1757576634507</updated>
+    </task>
+    <task id="LOCAL-00005" summary="la fonction modify-print error lorsqu’aucun paramètre n’est transmis">
+      <option name="closed" value="true" />
+      <created>1757577122982</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757577122982</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,7 +149,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add .gitignore" />
+    <MESSAGE value="update workspace and code style configuration" />
+    <MESSAGE value="fix: correct conditional logic for updating task state in commands.py" />
+    <MESSAGE value="la fonction modify-des parametres optionnels" />
+    <MESSAGE value="la fonction modify-print error lorsqu’aucun paramètre n’est transmis" />
+    <option name="LAST_COMMIT_MESSAGE" value="la fonction modify-print error lorsqu’aucun paramètre n’est transmis" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Groupe5$main.coverage" NAME="main Coverage Results" MODIFIED="1757513483868" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
