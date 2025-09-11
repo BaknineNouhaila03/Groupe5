@@ -28,7 +28,7 @@ def write_logs(path, action: str, result: str):
     try:
         with open(path, "a+", encoding="utf-8") as f:
             timestamp = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
-            f.write(timestamp + "\taction:" + action + "\tresult:" + result +
+            f.write(timestamp + " action:" + action + " result:" + result +
                     "\n")
     except Exception as e:
         print(f"Error writing to file: {e}")
