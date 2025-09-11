@@ -12,7 +12,7 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, et
     try:
         if description is not None : 
          tasklist[task_id].description = description
-        elif etat is not None :
+        if etat is not None :
          tasklist[task_id].etat = etat
     except KeyError:
         print(f"Task with ID {task_id} not found.")
