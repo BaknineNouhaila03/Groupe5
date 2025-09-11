@@ -1,7 +1,8 @@
 from task import Task
+from datetime import datetime
 
 SPLIT = ";"
-
+LOG_FILE = "logs.txt"
 
 def read_tasks(path):
     tasklist: dict[int, Task] = {}
@@ -22,3 +23,13 @@ def write_tasks(path, tasklist: dict[int, Task]):
                         task.etat + "\n")
     except Exception as e:
         print(f"Error writing to file: {e}")
+
+def write_logs(path, action: str, result: str):
+    try:
+        with open(path, "w", encoding="utf-8") as f:
+            timestamp = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+            f.write(timestamp + "\taction:" + action + "\tresult:" + result +
+                    "\n")
+    except Exception as e:
+        print(f"Error writing to file: {e}")
+
