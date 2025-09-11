@@ -1,28 +1,37 @@
-from utils import parser, io
-from commands import add, rm, modify, show
+from numpy import random
 
+def toDict(file):
+    dicti={}
+    with open(file, 'r') as f:
+        for l in f :
+         l= l.strip()
+         key, value = l.split(";", 1)
+         dicti[key]=value
+    return dicti
+    
+def UpdateFile(file,dicti):
+    with open(file, 'w') as f :
+        for i in dicti.keys():
+             f.write(i+";"+dicti[i]+'\n')
 
-def main():
-    args = parser.parse_args()
+def rm(file,id):
+    dicti=toDict(file)
+    if id in dicti.keys():
+        del dicti[id]
+        UpdateFile(file,dicti)
+    else:
+         print("id does not exist ")
 
-    try:
-        tasklist = io.read_tasks(args.path)
-        match args.command:
-            case "add":
-                add(tasklist, args.description, args.etat)
-            case "modify":
-                modify(tasklist, args.task_id, args.description, args.etat)
-            case "rm":
-                rm(tasklist, args.task_id)
-            case "show":
-                show(tasklist)
+def modify(file, id, contenu):
+    dicti = toDict(file) 
+    if id in dicti.keys():
+        dicti[id] = contenu
+        UpdateFile(file, dicti)
+    else:
+        print("id does not exist")
 
-        io.write_tasks(args.path, tasklist)
+modify("test.txt","02","task2")
+#rm("test.txt","03")
 
-    except FileNotFoundError:
-        print("Task file not found.")
-        return False
-
-
-if __name__ == "__main__":
-    main()
+          
+     
