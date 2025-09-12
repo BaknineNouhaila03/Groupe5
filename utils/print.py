@@ -8,16 +8,19 @@ def print_tasks(tasklist: dict[int, Task]):
     id_width = max(len("id"), max((len(t.id) for t in tasklist.values())))
     desc_width = max(len("description"),
                      max((len(t.description) for t in tasklist.values())))
+    state_width = max(len("state"),max((len(t.state) for t in tasklist.values())))
+
 
     def print_grid_line():
-        print(f"+{'-' * (id_width + 2)}+{'-' * (desc_width + 2)}+")
+        print(f"+{'-' * (id_width + 2)}+{'-' * (desc_width + 2)}+{'-' * (state_width + 2)}")
 
     print_grid_line()
-    print(f"| {'id'.ljust(id_width)} | {'description'.ljust(desc_width)} |")
+    print(f"| {'id'.ljust(id_width)} | {'description'.ljust(desc_width)} | {'state'.ljust(state_width)} |")
     print_grid_line()
 
     for task in tasklist.values():
         print(
-            f"| {task.id.ljust(id_width)} | {task.description.ljust(desc_width)} |")
+            f"| {task.id.ljust(id_width)} | "
+            f"{task.description.ljust(desc_width)} | {task.state.ljust(state_width)} |")
 
     print_grid_line()
