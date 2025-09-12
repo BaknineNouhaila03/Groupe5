@@ -15,7 +15,7 @@ def print_tasks(tasklist: dict[int, Task]):
 
     def print_grid_line():
         print(f"+{'-' * (id_width + 2)}+{'-' * (desc_width + 2)}+"
-              f"{'-' * (state_width + 2)}+{'-' * (recurrence_width + 2)}")
+              f"{'-' * (state_width + 2)}+{'-' * (recurrence_width + 2)}+")
 
     print_grid_line()
     print(f"| {'id'.ljust(id_width)} | {'description'.ljust(desc_width)} | {'state'.ljust(state_width)} | {'recurrence'.ljust(recurrence_width)} |")
