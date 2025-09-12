@@ -28,7 +28,7 @@ def parse_args():
                                                          "modify")
     modify_parser.add_argument("-d", "--description", type=str,
                                help="New description of the task")
-    modify_parser.add_argument("-e", "--state", type=str,
+    modify_parser.add_argument("-s", "--state", type=str,
                                help="New state of the task : started, suspended, cancelled and completed")
     modify_parser.add_argument("-r", "--recurrence", type=str,
                                help="New recurrence of the task : weekly, monthly and No recurrence")
