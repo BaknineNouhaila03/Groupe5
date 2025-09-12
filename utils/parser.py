@@ -20,7 +20,7 @@ def parse_args():
     add_parser.add_argument("state", type=str,
                             help="New state of the task : started, suspended, cancelled and completed")
     add_parser.add_argument("recurrence", type=str,
-                            help="Recurrence of the task : weekly, monthly or No Recurrence")
+                            help="Recurrence of the task : weekly, monthly or no")
     modify_parser = subparsers.add_parser("modify",
                                           help="Modify an existing task")
 
@@ -31,7 +31,7 @@ def parse_args():
     modify_parser.add_argument("-e", "--state", type=str,
                                help="New state of the task : started, suspended, cancelled and completed")
     modify_parser.add_argument("-r", "--recurrence", type=str,
-                               help="New recurrence of the task : weekly, monthly and No recurrence")
+                               help="New recurrence of the task : weekly, monthly and no")
 
     rm_parser = subparsers.add_parser("rm", help="Remove a task")
     rm_parser.add_argument("task_id", type=int, help="ID of the task to remove"

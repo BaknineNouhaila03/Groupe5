@@ -29,9 +29,11 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, st
             return f"[error] Status not provided as required."
          tasklist[task_id].state = state
         if recurrence is not None :
-         if recurrence not in [ "weekly", "monthly", "No recurrence"]:
-            print("recurrence must be one of: weekly , monthly , No recurrence")
+         if recurrence not in [ "weekly", "monthly", "no"]:
+            print("recurrence must be one of: weekly , monthly , no")
             return f"[error] Status not provided as required."
+         tasklist[task_id].recurrence = recurrence
+         
         return (f"[success] Task  with ID {task_id} successfully modified:"
                 f"description updated to \"{tasklist[task_id].description}\", "
                 f"status updated to \"{tasklist[task_id].state}\",")
