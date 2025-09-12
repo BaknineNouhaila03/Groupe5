@@ -5,21 +5,21 @@ from task import Task
 from utils.print import print_tasks
 
 
-def add(tasklist: dict[int, Task], description: str , state: str):
+def add(tasklist: dict[int, Task], description: str , state: str , recurrence: str ):
     if state not in [ "started", "suspended", "completed","cancelled"]:
             print("State must be one of: started, suspended, completed ou cancelled")
             return (f"[error] Status not provided as required.")
     task_id = max((tasklist.keys()), default=0) + 1
-    tasklist[task_id] = Task(str(task_id), description , state)
+    tasklist[task_id] = Task(str(task_id), description , state , datetime.now() , recurrence)
     print("Task added with ID:", task_id)
     return (f"[success] New task added successfully: ID {task_id}; "
-            f"Description \"{description}\"; Status \"{state}\".")
+            f"Description \"{description}\"; Status \"{state}\"; Recurrence \"{recurrence}\".")
 
 
-def modify(tasklist: dict[int, Task], task_id: int, description : str = None, state: str  = None ):
-    if description is None and state is None:
-        print("One of the arguments -d/--description -e/--state is required.")
-        return (f"[error] No parameters provided: description or status missing.")
+def modify(tasklist: dict[int, Task], task_id: int, description : str = None, state: str  = None, recurrence :str = None ):
+    if description is None and state is None and recurrence is None:
+        print("One of the arguments -d/--description -e/--state -r/--recurrence is required.")
+        return (f"[error] No parameters provided: description , status or recurrence missing.")
     try:
         if description is not None : 
          tasklist[task_id].description = description
@@ -28,9 +28,13 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, st
             print("State must be one of: started, suspended, completed ou cancelled")
             return (f"[error] Status not provided as required.")
          tasklist[task_id].state = state
+        if recurrence is not None :
+         if recurrence not in [ "weekly", "monthly", "No recurrence"]:
+            print("recurrence must be one of: weekly , monthly , No recurrence")
+            return (f"[error] Status not provided as required.")            
         return (f"[success] Task  with ID {task_id} successfully modified:"
                 f"description updated to \"{tasklist[task_id].description}\", "
-                f"status updated to \"{tasklist[task_id].state}\".")
+                f"status updated to \"{tasklist[task_id].state}\",")
     except KeyError:
         print(f"Task with ID {task_id} not found.")
         return (f"[error] Task with ID {task_id} not found.")
@@ -60,3 +64,4 @@ def add_duration(date_obj: datetime, recurrence: str) -> datetime:
         raise ValueError("recurrence invalide")
     
     return nouvelle_date
+
