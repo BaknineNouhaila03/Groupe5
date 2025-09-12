@@ -1,3 +1,6 @@
+from datetime import datetime, timedelta
+
+from matplotlib.dates import relativedelta
 from task import Task
 from utils.print import print_tasks
 
@@ -46,3 +49,14 @@ def show(tasklist: dict[int, Task]):
     sorted_tasks = dict(sorted(tasklist.items()))
     print_tasks(sorted_tasks)
     return (f"[success] All tasks displayed successfully.")
+
+def add_duration(date_obj: datetime, recurrence: str) -> datetime:
+
+    if recurrence.lower() == "weekly":
+        nouvelle_date = date_obj + timedelta(weeks=1)
+    elif recurrence.lower() == "monthly":
+        nouvelle_date = date_obj + relativedelta(months=1)
+    else:
+        raise ValueError("recurrence invalide")
+    
+    return nouvelle_date
