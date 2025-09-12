@@ -18,7 +18,7 @@ def add(tasklist: dict[int, Task], description: str , state: str , recurrence: s
 
 def modify(tasklist: dict[int, Task], task_id: int, description : str = None, state: str  = None, recurrence :str = None ):
     if description is None and state is None and recurrence is None:
-        print("One of the arguments -d/--description -e/--state -r/--recurrence is required.")
+        print("One of the arguments -d/--description -s/--state -r/--recurrence is required.")
         return f"[error] No parameters provided: description , status or recurrence missing."
     try:
         if description is not None : 
@@ -36,7 +36,8 @@ def modify(tasklist: dict[int, Task], task_id: int, description : str = None, st
          
         return (f"[success] Task  with ID {task_id} successfully modified:"
                 f"description updated to \"{tasklist[task_id].description}\", "
-                f"status updated to \"{tasklist[task_id].state}\",")
+                f"status updated to \"{tasklist[task_id].state}\","
+                f"recurrence updated to \"{tasklist[task_id].recurrence}\"")
     except KeyError:
         print(f"Task with ID {task_id} not found.")
         return f"[error] Task with ID {task_id} not found."
