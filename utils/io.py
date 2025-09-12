@@ -10,8 +10,12 @@ def read_tasks(path):
         for line in f:
             line = line.strip()
             if line:
-                task_id, description, state = line.strip().split(SPLIT)
-                tasklist[int(task_id)] = Task(task_id, description, state)
+                task_id, description, state, started_at, recurrence = line.strip(
+
+                ).split(SPLIT)
+                tasklist[int(task_id)] = Task(task_id, description, state,
+                                              datetime.strptime(started_at,"%Y/%m/%d %H:%M:%S"),
+                                              recurrence)
     return tasklist
 
 
@@ -20,7 +24,9 @@ def write_tasks(path, tasklist: dict[int, Task]):
         with open(path, "w", encoding="utf-8") as f:
             for task in tasklist.values():
                 f.write(str(task.id) + SPLIT + task.description + SPLIT +
-                        task.state + "\n")
+                        task.state + SPLIT + datetime.strftime(
+                    task.started_at,"%Y/%m/%d %H:%M:%S") + SPLIT +
+                        task.recurrence + "\n")
     except Exception as e:
         print(f"Error writing to file: {e}")
 
